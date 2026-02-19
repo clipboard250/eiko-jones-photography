@@ -3,1150 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eiko Jones — Direct-to-artist stock imagery</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Eiko Jones — Direct-to-Artist Stock Imagery</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --deep: #1a2a3a;
-  --ocean: #0e1c2a;
-  --cyan: #00d4ff;
-  --cyan-dim: #00a8cc;
-  --teal: #00b4d8;
-  --white: #f0f4f7;
-  --text: #c8d6e0;
-  --text-dim: #8a9baa;
-  --card-bg: rgba(255,255,255,0.04);
-  --card-border: rgba(0,212,255,0.12);
-  --whatsapp: #25D366;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--ocean);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ======================== HERO ======================== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 80%, rgba(0,212,255,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(0,180,216,0.06) 0%, transparent 50%),
-    linear-gradient(180deg, var(--ocean) 0%, #0a1520 50%, var(--ocean) 100%);
-  z-index: 0;
-}
-
-.caustics {
-  position: absolute;
-  inset: 0;
-  opacity: 0.025;
-  background: repeating-conic-gradient(rgba(0,212,255,0.3) 0%, transparent 5%, transparent 10%);
-  background-size: 200px 200px;
-  animation: causticMove 25s linear infinite;
-  z-index: 0;
-}
-
-@keyframes causticMove {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-100px, -50px) rotate(360deg); }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  padding: 2rem;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  border: 1px solid var(--card-border);
-  border-radius: 100px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 2rem;
-  background: rgba(0,212,255,0.05);
-  animation: fadeUp 1s ease both;
-}
-
-.hero-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--cyan);
-  animation: pulse 2s ease infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
-  animation: fadeUp 1s 0.15s ease both;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--cyan);
-}
-
-.hero-sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text-dim);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  font-weight: 300;
-  animation: fadeUp 1s 0.3s ease both;
-}
-
-.hero-cta-row {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeUp 1s 0.45s ease both;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  background: var(--cyan);
-  color: var(--ocean);
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #33ddff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,212,255,0.25);
-}
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  background: var(--whatsapp);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-  background: #2be06f;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37,211,102,0.25);
-}
-
-.btn-whatsapp svg {
-  width: 18px;
-  height: 18px;
-  fill: #fff;
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  background: transparent;
-  color: var(--white);
-  font-weight: 500;
-  font-size: 0.95rem;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  background: rgba(0,212,255,0.05);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ======================== TRUST BAR ======================== */
-.trust-bar {
-  padding: 3rem 2rem;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  background: rgba(0,0,0,0.2);
-}
-
-.trust-bar p {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 1.5rem;
-}
-
-.trust-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  opacity: 0.5;
-}
-
-.trust-logos span {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-
-/* ======================== VALUE PROP ======================== */
-.value-section {
-  padding: 6rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 1rem;
-}
-
-.value-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-}
-
-.value-section .lead {
-  font-size: 1.1rem;
-  color: var(--text-dim);
-  max-width: 650px;
-  margin-bottom: 3rem;
-  font-weight: 300;
-}
-
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.value-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.4s ease;
-}
-
-.value-card:hover {
-  border-color: rgba(0,212,255,0.3);
-  background: rgba(0,212,255,0.04);
-  transform: translateY(-4px);
-}
-
-.value-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: rgba(0,212,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.value-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke: var(--cyan);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.value-card h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.75rem;
-}
-
-.value-card p {
-  font-size: 0.9rem;
-  color: var(--text-dim);
-  line-height: 1.6;
-}
-
-/* ======================== INDUSTRIES ======================== */
-.industries {
-  padding: 4rem 2rem 6rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.industries h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 1rem;
-}
-
-.industries .lead {
-  font-size: 1.05rem;
-  color: var(--text-dim);
-  max-width: 600px;
-  margin-bottom: 3rem;
-  font-weight: 300;
-}
-
-.industry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
-}
-
-.industry-card {
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--card-bg);
-  transition: all 0.4s ease;
-}
-
-.industry-card:hover {
-  border-color: rgba(0,212,255,0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-
-.industry-card-header {
-  padding: 1.5rem 2rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.industry-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(0,212,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.industry-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--cyan);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.industry-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.industry-card-body {
-  padding: 0 2rem 1.25rem;
-}
-
-.industry-card-body p {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  line-height: 1.6;
-}
-
-.industry-uses {
-  padding: 0 2rem 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.use-tag {
-  padding: 4px 12px;
-  border-radius: 100px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  background: rgba(0,212,255,0.06);
-  border: 1px solid rgba(0,212,255,0.1);
-  color: var(--cyan-dim);
-}
-
-.industry-card-footer {
-  padding: 1rem 2rem;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.industry-card-footer a {
-  font-size: 0.85rem;
-  color: var(--cyan);
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.3s ease;
-}
-
-.industry-card:hover .industry-card-footer a {
-  gap: 10px;
-}
-
-.industry-card-footer .wa-link {
-  color: var(--whatsapp);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.industry-card-footer .wa-link svg {
-  width: 14px;
-  height: 14px;
-  fill: var(--whatsapp);
-}
-
-/* ======================== TESTIMONIALS ======================== */
-.testimonials {
-  padding: 6rem 0;
-  background: rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  overflow: hidden;
-}
-
-.testimonials-header {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem 3rem;
-}
-
-.testimonials h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
-  color: var(--white);
-}
-
-/* Scrolling testimonial track */
-.testimonial-track-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.testimonial-track-wrapper::before,
-.testimonial-track-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.testimonial-track-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(10,18,28,1) 0%, transparent 100%);
-}
-
-.testimonial-track-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(10,18,28,1) 0%, transparent 100%);
-}
-
-.testimonial-track {
-  display: flex;
-  gap: 1.5rem;
-  animation: scrollTestimonials 30s linear infinite;
-  width: max-content;
-  padding: 0.5rem 0;
-}
-
-.testimonial-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scrollTestimonials {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.testimonial-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 2rem;
-  min-width: 380px;
-  max-width: 420px;
-  flex-shrink: 0;
-  transition: border-color 0.3s;
-}
-
-.testimonial-card:hover {
-  border-color: rgba(0,212,255,0.3);
-}
-
-.testimonial-card .quote {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.95rem;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.testimonial-card .quote::before {
-  content: '\201C';
-  color: var(--cyan);
-  font-size: 2rem;
-  line-height: 0;
-  vertical-align: -0.3em;
-  margin-right: 4px;
-}
-
-.testimonial-author {
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-author strong {
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.testimonial-author span {
-  color: var(--text-dim);
-  font-size: 0.8rem;
-}
-
-/* ======================== CTA / CONTACT ======================== */
-.cta-section {
-  padding: 6rem 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 1rem;
-}
-
-.cta-section .lead {
-  font-size: 1.05rem;
-  color: var(--text-dim);
-  max-width: 550px;
-  margin: 0 auto 1.5rem;
-  font-weight: 300;
-}
-
-/* Quick action buttons */
-.quick-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-
-.quick-actions .btn-whatsapp,
-.quick-actions .btn-sms {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.quick-actions .btn-whatsapp {
-  background: var(--whatsapp);
-  color: #fff;
-}
-
-.quick-actions .btn-whatsapp:hover {
-  background: #2be06f;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37,211,102,0.25);
-}
-
-.quick-actions .btn-sms {
-  background: rgba(255,255,255,0.08);
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-.quick-actions .btn-sms:hover {
-  background: rgba(255,255,255,0.12);
-  transform: translateY(-2px);
-}
-
-.quick-actions .btn-sms svg,
-.quick-actions .btn-whatsapp svg {
-  width: 18px;
-  height: 18px;
-}
-
-.form-divider {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-bottom: 1.5rem;
-}
-
-.contact-form {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 2.5rem;
-  text-align: left;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group.full {
-  grid-column: 1 / -1;
-}
-
-.form-group label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  transition: border-color 0.3s;
-  outline: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--cyan);
-}
-
-.form-group select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300d4ff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-}
-
-.form-group select option {
-  background: var(--ocean);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.form-submit-row {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.form-submit-row .note {
-  font-size: 0.78rem;
-  color: var(--text-dim);
-}
-
-.btn-submit {
-  padding: 14px 40px;
-  background: var(--cyan);
-  color: var(--ocean);
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: all 0.3s ease;
-}
-
-.btn-submit:hover {
-  background: #33ddff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,212,255,0.25);
-}
-
-/* ======================== FOOTER ======================== */
-footer {
-  padding: 3rem 2rem;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-footer p {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-}
-
-footer a {
-  color: var(--cyan);
-  text-decoration: none;
-}
-
-/* ======================== RESPONSIVE ======================== */
-@media (max-width: 700px) {
-  .form-row { grid-template-columns: 1fr; }
-  .trust-logos { gap: 1.5rem; }
-  .industry-grid { grid-template-columns: 1fr; }
-  .hero-cta-row { flex-direction: column; align-items: center; }
-  .testimonial-card { min-width: 300px; max-width: 340px; }
-  .quick-actions { flex-direction: column; align-items: center; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e12;
+  --surface:#12171d;
+  --surface-2:#1a2029;
+  --border:#222a35;
+  --text:#e8ecf1;
+  --text-dim:#8a96a6;
+  --accent:#00c2d1;
+  --accent-hover:#00dae8;
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,18,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--white)}
+.nav-logo span{color:var(--accent);font-weight:400}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent);color:var(--bg);padding:8px 20px;border-radius:6px;font-weight:600;font-size:13px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--accent-hover);color:var(--bg)}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:120px 48px 80px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 70% 40%, rgba(0,194,209,.08) 0%, transparent 60%),
+  radial-gradient(ellipse 60% 50% at 20% 80%, rgba(0,100,120,.06) 0%, transparent 50%);
+  pointer-events:none}
+.hero-content{position:relative;max-width:640px;z-index:2}
+.hero-badge{display:inline-block;padding:6px 14px;border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5.5vw,72px);font-weight:600;line-height:1.08;letter-spacing:-.03em;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{font-size:18px;color:var(--text-dim);max-width:480px;line-height:1.7;margin-bottom:40px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--bg);padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--border);transition:all .2s}
+.btn-secondary:hover{border-color:var(--text-dim);background:var(--surface)}
+
+/* HERO GRID (faux image grid like shutterstock) */
+.hero-grid{position:absolute;right:-40px;top:50%;transform:translateY(-50%);display:grid;grid-template-columns:200px 200px;grid-template-rows:repeat(3,160px);gap:12px;opacity:.22;z-index:1}
+.hero-grid div{border-radius:10px;background:var(--surface-2)}
+.hero-grid div:nth-child(1){background:linear-gradient(135deg,#0a3d4a,#064f5c);grid-row:1/2}
+.hero-grid div:nth-child(2){background:linear-gradient(135deg,#1a3a2a,#0d4a3a);grid-row:1/3}
+.hero-grid div:nth-child(3){background:linear-gradient(135deg,#2a3545,#1a2a3d);grid-row:2/4}
+.hero-grid div:nth-child(4){background:linear-gradient(135deg,#0a3040,#083848);grid-row:3/4}
+
+/* TRUSTED BY */
+.trusted{padding:40px 48px 60px;border-top:1px solid var(--border)}
+.trusted-label{font-size:12px;font-weight:600;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;text-align:center;margin-bottom:28px}
+.trusted-logos{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:.45}
+.trusted-logos span{font-size:14px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+
+/* SECTION SHARED */
+section{padding:100px 48px}
+.section-label{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,44px);font-weight:600;letter-spacing:-.02em;margin-bottom:16px;line-height:1.15}
+.section-sub{font-size:16px;color:var(--text-dim);max-width:520px;line-height:1.7;margin-bottom:56px}
+
+/* WHY DIRECT */
+.why{background:var(--surface)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px}
+.why-card{background:var(--bg);padding:44px 36px;transition:background .3s}
+.why-card:hover{background:var(--surface-2)}
+.why-card h3{font-size:17px;font-weight:600;margin-bottom:10px;color:var(--white)}
+.why-card p{font-size:14px;color:var(--text-dim);line-height:1.7}
+.why-card .card-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:300;color:var(--border);margin-bottom:20px;line-height:1}
+
+/* INDUSTRIES */
+.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.ind-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:36px 32px;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.ind-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.ind-card:hover .ind-arrow{opacity:1;transform:translateX(0)}
+.ind-card h3{font-size:17px;font-weight:600;color:var(--white);margin-bottom:10px}
+.ind-card p{font-size:14px;color:var(--text-dim);line-height:1.65;margin-bottom:18px}
+.ind-tags{display:flex;flex-wrap:wrap;gap:8px}
+.ind-tag{padding:4px 12px;border-radius:100px;background:var(--surface-2);font-size:12px;color:var(--text-dim);font-weight:500;border:1px solid var(--border)}
+.ind-arrow{position:absolute;top:36px;right:32px;color:var(--accent);font-size:20px;opacity:0;transform:translateX(-8px);transition:all .3s}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--surface)}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.test-card{background:var(--bg);border-radius:12px;padding:40px 36px;border:1px solid var(--border)}
+.test-quote{font-size:15px;color:var(--text);line-height:1.75;margin-bottom:28px;font-style:italic;opacity:.85}
+.test-author{font-size:14px;font-weight:600;color:var(--white)}
+.test-role{font-size:13px;color:var(--text-dim);margin-top:2px}
+
+/* CTA */
+.cta-section{text-align:center;padding:120px 48px}
+.cta-section .section-title{max-width:600px;margin:0 auto 16px}
+.cta-section .section-sub{max-width:500px;margin:0 auto 40px}
+.cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* CONTACT FORM */
+.contact{background:var(--surface);border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:16px;font-weight:600}
+.contact-info p{color:var(--text-dim);font-size:15px;line-height:1.7;margin-bottom:24px}
+.contact-stat{margin-bottom:20px}
+.contact-stat strong{font-size:14px;color:var(--white);display:block;margin-bottom:2px}
+.contact-stat span{font-size:13px;color:var(--text-dim)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text-dim);margin-bottom:6px;letter-spacing:.02em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* FOOTER */
+footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .foot-left{font-size:13px;color:var(--text-dim)}
+footer .foot-right a{color:var(--text-dim);text-decoration:none;font-size:13px;margin-left:24px;transition:color .2s}
+footer .foot-right a:hover{color:var(--white)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .7s ease both}
+.hero-badge{animation-delay:.1s}
+.hero h1{animation-delay:.2s}
+.hero p{animation-delay:.35s}
+.hero-actions{animation-delay:.5s}
+
+@media(max-width:768px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  section,.hero,.trusted,.cta-section,.contact{padding-left:24px;padding-right:24px}
+  .hero{min-height:auto;padding-top:100px;padding-bottom:60px}
+  .hero-grid{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .form-row{grid-template-columns:1fr}
+  .trusted-logos{gap:24px}
 }
 </style>
 </head>
 <body>
 
-<!-- SVG sprite for icons -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
-  <symbol id="icon-handshake" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0A5.4 5.4 0 0 0 3.58 12L12 20.42 20.42 12a5.4 5.4 0 0 0 0-7.42z"/></symbol>
-  <symbol id="icon-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
-  <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
-  <symbol id="icon-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
-  <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-  <symbol id="icon-fish" viewBox="0 0 24 24"><path d="M6.34 18.34A9.97 9.97 0 0 0 12 20a9.97 9.97 0 0 0 5.66-1.66M2 12h2m16 0h2M12 2v2m0 16v2"/><circle cx="12" cy="12" r="4"/><path d="M18 6l-2.5 2.5M6 18l2.5-2.5M18 18l-2.5-2.5M6 6l2.5 2.5"/></symbol>
-  <symbol id="icon-droplet" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></symbol>
-  <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
-  <symbol id="icon-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22V12h6v10M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01"/></symbol>
-  <symbol id="icon-landmark" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
-  <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-  <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
-  <symbol id="icon-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-</svg>
+<nav>
+  <div class="nav-logo">eiko jones<span> .</span></div>
+  <div class="nav-links">
+    <a href="#why">Why Direct</a>
+    <a href="#industries">Industries</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact" class="nav-cta">License Images</a>
+  </div>
+</nav>
 
-<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="caustics"></div>
   <div class="hero-content">
     <div class="hero-badge">Direct-to-artist stock imagery</div>
-    <h1>Stunning nature and wildlife photography, <em>straight from the field</em></h1>
-    <p class="hero-sub">Award-winning underwater, salmon, and landscape imagery licensed directly from photographer Eiko Jones. Featured by National Geographic, Patagonia, and WWF.</p>
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary">License images</a>
-      <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20some%20of%20your%20imagery." class="btn-whatsapp" target="_blank" rel="noopener">
-        <svg><use href="#icon-whatsapp"/></svg>
-        Message Eiko
-      </a>
-      <a href="#industries" class="btn-secondary">Browse by industry</a>
+    <h1>Nature photography, <em>straight from the field</em></h1>
+    <p>Award-winning underwater, salmon, and landscape imagery licensed directly from photographer Eiko Jones. No agencies. No middlemen.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">License Images</a>
+      <a href="#industries" class="btn-secondary">Browse by Industry</a>
     </div>
+  </div>
+  <div class="hero-grid">
+    <div></div><div></div><div></div><div></div>
   </div>
 </section>
 
-<!-- ============ TRUST BAR ============ -->
-<div class="trust-bar">
-  <p>Trusted by leading organizations worldwide</p>
-  <div class="trust-logos">
+<div class="trusted">
+  <div class="trusted-label">Featured by and licensed to</div>
+  <div class="trusted-logos">
     <span>National Geographic</span>
     <span>Patagonia</span>
     <span>WWF Canada</span>
     <span>Seattle Aquarium</span>
     <span>Microsoft</span>
-    <span>Fisheries and Oceans Canada</span>
+    <span>Fisheries &amp; Oceans Canada</span>
   </div>
 </div>
 
-<!-- ============ VALUE PROPS ============ -->
-<section class="value-section">
+<section class="why" id="why">
   <div class="section-label">Why direct-to-artist</div>
-  <h2>Skip the stock agencies. Work with the source.</h2>
-  <p class="lead">When you license directly from Eiko, you get exclusive access to fresh, current imagery that nobody else is using.</p>
-  <div class="value-grid">
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-camera"/></svg></div>
+  <div class="section-title">Skip the stock agencies. Work with the source.</div>
+  <div class="section-sub">License directly from Eiko and get exclusive access to fresh, current imagery that nobody else is using.</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="card-num">01</div>
       <h3>Exclusive, fresh imagery</h3>
-      <p>Continuously updated library from active expeditions in New Zealand, Canada, and worldwide. Get images nobody else has.</p>
+      <p>Continuously updated library from active expeditions in New Zealand, Canada, and worldwide. Images you won't find on any stock site.</p>
     </div>
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-message"/></svg></div>
+    <div class="why-card">
+      <div class="card-num">02</div>
       <h3>Work directly with the artist</h3>
       <p>Custom requests, specific species, particular angles. Communicate directly with Eiko to get exactly what your project needs.</p>
     </div>
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-zap"/></svg></div>
+    <div class="why-card">
+      <div class="card-num">03</div>
       <h3>Simple, fast licensing</h3>
       <p>No agency middlemen, no complicated rights management. Straightforward licensing for print, digital, exhibitions, and more.</p>
     </div>
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-award"/></svg></div>
+    <div class="why-card">
+      <div class="card-num">04</div>
       <h3>Award-winning quality</h3>
       <p>Recognized by the world's top publications. Images that elevate your brand, publication, or exhibit beyond generic stock.</p>
     </div>
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-waves"/></svg></div>
+    <div class="why-card">
+      <div class="card-num">05</div>
       <h3>Unmatched underwater library</h3>
       <p>One of the most comprehensive collections of Pacific salmon, freshwater ecosystems, and underwater landscape imagery available anywhere.</p>
     </div>
-    <div class="value-card">
-      <div class="value-icon"><svg><use href="#icon-globe"/></svg></div>
+    <div class="why-card">
+      <div class="card-num">06</div>
       <h3>Versatile applications</h3>
       <p>Proven across signage, brochures, magazines, textbooks, websites, social media, exhibition displays, product packaging, and more.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ INDUSTRIES ============ -->
-<section class="industries" id="industries">
-  <div class="section-label">Industries we serve</div>
-  <h2>Imagery tailored to your sector</h2>
-  <p class="lead">Select your industry to see how Eiko's imagery has been used by organizations like yours.</p>
-
-  <div class="industry-grid">
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-droplet"/></svg></div>
-        <h3>Environmental organizations</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Salmon, watershed, and ecosystem imagery for conservation campaigns, fundraising materials, and public awareness initiatives.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Social media</span>
-        <span class="use-tag">Publications</span>
-        <span class="use-tag">Outreach</span>
-        <span class="use-tag">Fundraising</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20environmental%20org%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
+<section id="industries">
+  <div class="section-label">Industries</div>
+  <div class="section-title">Imagery tailored to your sector</div>
+  <div class="section-sub">Select your industry to see how Eiko's imagery has been used by organizations like yours.</div>
+  <div class="industries-grid">
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Environmental organizations</h3>
+      <p>Salmon, watershed, and ecosystem imagery for conservation campaigns, fundraising materials, and public awareness initiatives.</p>
+      <div class="ind-tags"><span class="ind-tag">Social media</span><span class="ind-tag">Publications</span><span class="ind-tag">Outreach</span><span class="ind-tag">Fundraising</span></div>
     </div>
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-fish"/></svg></div>
-        <h3>Fisheries and marine science</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Scientific-quality underwater photography of Pacific salmon species, spawning behavior, freshwater habitats, and marine ecosystems.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Scientific papers</span>
-        <span class="use-tag">Textbooks</span>
-        <span class="use-tag">Brochures</span>
-        <span class="use-tag">Web</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20in%20fisheries%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Fisheries &amp; marine science</h3>
+      <p>Scientific-quality underwater photography of Pacific salmon species, spawning behavior, freshwater habitats, and marine ecosystems.</p>
+      <div class="ind-tags"><span class="ind-tag">Scientific papers</span><span class="ind-tag">Textbooks</span><span class="ind-tag">Brochures</span><span class="ind-tag">Web</span></div>
     </div>
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-waves"/></svg></div>
-        <h3>Public aquariums and zoos</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Large-format exhibit signage, visitor guides, advertising, and display graphics featuring vibrant underwater and wildlife imagery.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Exhibit signage</span>
-        <span class="use-tag">Displays</span>
-        <span class="use-tag">Advertising</span>
-        <span class="use-tag">Guides</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20aquarium%20or%20zoo%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Public aquariums &amp; zoos</h3>
+      <p>Large-format exhibit signage, visitor guides, advertising, and display graphics featuring vibrant underwater and wildlife imagery.</p>
+      <div class="ind-tags"><span class="ind-tag">Exhibit signage</span><span class="ind-tag">Displays</span><span class="ind-tag">Advertising</span><span class="ind-tag">Guides</span></div>
     </div>
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-book"/></svg></div>
-        <h3>Magazines and publishers</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Editorial-grade nature, wildlife, and landscape photography for articles, covers, books, and marketing materials.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Article images</span>
-        <span class="use-tag">Covers</span>
-        <span class="use-tag">Books</span>
-        <span class="use-tag">Marketing</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20a%20publisher%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Magazines &amp; publishers</h3>
+      <p>Editorial-grade nature, wildlife, and landscape photography for articles, covers, books, and marketing materials.</p>
+      <div class="ind-tags"><span class="ind-tag">Articles</span><span class="ind-tag">Covers</span><span class="ind-tag">Books</span><span class="ind-tag">Marketing</span></div>
     </div>
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-landmark"/></svg></div>
-        <h3>Government agencies</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Professional imagery for public communications, park signage, departmental publications, educational campaigns, and web presence.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Signage</span>
-        <span class="use-tag">Publications</span>
-        <span class="use-tag">Web</span>
-        <span class="use-tag">Campaigns</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20a%20government%20agency%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Government agencies</h3>
+      <p>Professional imagery for public communications, park signage, departmental publications, educational campaigns, and web presence.</p>
+      <div class="ind-tags"><span class="ind-tag">Signage</span><span class="ind-tag">Publications</span><span class="ind-tag">Web</span><span class="ind-tag">Campaigns</span></div>
     </div>
-
-    <div class="industry-card">
-      <div class="industry-card-header">
-        <div class="industry-icon"><svg><use href="#icon-briefcase"/></svg></div>
-        <h3>Corporate and brands</h3>
-      </div>
-      <div class="industry-card-body">
-        <p>Striking nature imagery for corporate branding, product packaging, trade show banners, wall graphics, and digital campaigns.</p>
-      </div>
-      <div class="industry-uses">
-        <span class="use-tag">Packaging</span>
-        <span class="use-tag">Trade shows</span>
-        <span class="use-tag">Wall graphics</span>
-        <span class="use-tag">Digital</span>
-      </div>
-      <div class="industry-card-footer">
-        <a href="#contact">Request imagery &#8594;</a>
-        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20imagery%20for%20our%20brand." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS (scrolling) ============ -->
-<section class="testimonials">
-  <div class="testimonials-header">
-    <div class="section-label">What clients say</div>
-    <h2>Trusted by the best in conservation and media</h2>
-  </div>
-  <div class="testimonial-track-wrapper">
-    <div class="testimonial-track">
-      <!-- First set -->
-      <div class="testimonial-card">
-        <p class="quote">You are always such an incredible resource for this unique imagery and I consistently put forward your photos for related projects we have going on here at Patagonia.</p>
-        <div class="testimonial-author">
-          <strong>Rich Crowder</strong>
-          <span>Photography department, Patagonia Inc</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="quote">My new boss is a HUGE fan of yours. She really is excited and has encouraged me to look into purchasing more photos from you. I REALLY love your salmon shots.</p>
-        <div class="testimonial-author">
-          <strong>Sharon Dean</strong>
-          <span>Sr. graphic designer, Seattle Aquarium</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="quote">I just went to your website and my heart is pounding after seeing your absolutely incredible and inspiring new work. I seldom feel the way I do when I look at your images.</p>
-        <div class="testimonial-author">
-          <strong>Elizabeth Phillips</strong>
-          <span>Visual Thinkers Communication Design Inc</span>
-        </div>
-      </div>
-      <!-- Duplicate set for infinite scroll -->
-      <div class="testimonial-card">
-        <p class="quote">You are always such an incredible resource for this unique imagery and I consistently put forward your photos for related projects we have going on here at Patagonia.</p>
-        <div class="testimonial-author">
-          <strong>Rich Crowder</strong>
-          <span>Photography department, Patagonia Inc</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="quote">My new boss is a HUGE fan of yours. She really is excited and has encouraged me to look into purchasing more photos from you. I REALLY love your salmon shots.</p>
-        <div class="testimonial-author">
-          <strong>Sharon Dean</strong>
-          <span>Sr. graphic designer, Seattle Aquarium</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="quote">I just went to your website and my heart is pounding after seeing your absolutely incredible and inspiring new work. I seldom feel the way I do when I look at your images.</p>
-        <div class="testimonial-author">
-          <strong>Elizabeth Phillips</strong>
-          <span>Visual Thinkers Communication Design Inc</span>
-        </div>
-      </div>
+    <div class="ind-card">
+      <span class="ind-arrow">&rarr;</span>
+      <h3>Corporate &amp; brands</h3>
+      <p>Striking nature imagery for corporate branding, product packaging, trade show banners, wall graphics, and digital campaigns.</p>
+      <div class="ind-tags"><span class="ind-tag">Packaging</span><span class="ind-tag">Trade shows</span><span class="ind-tag">Wall graphics</span><span class="ind-tag">Digital</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT / CTA ============ -->
-<section class="cta-section" id="contact">
-  <h2>Ready to license?</h2>
-  <p class="lead">Tell us about your project and we'll send you a curated selection of images tailored to your needs, usually within 24 hours.</p>
-
-  <!-- Quick action buttons -->
-  <div class="quick-actions">
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20some%20of%20your%20imagery." class="btn-whatsapp" target="_blank" rel="noopener">
-      <svg><use href="#icon-whatsapp"/></svg>
-      WhatsApp Eiko directly
-    </a>
-    <a href="sms:+64212236266&body=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20some%20of%20your%20imagery." class="btn-sms">
-      <svg style="stroke:var(--white);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;"><use href="#icon-message"/></svg>
-      Text Eiko directly
-    </a>
+<section class="testimonials" id="testimonials">
+  <div class="section-label">Clients</div>
+  <div class="section-title">Trusted by the best in conservation and media</div>
+  <div class="section-sub">Organizations that rely on Eiko's imagery for their most important projects.</div>
+  <div class="test-grid">
+    <div class="test-card">
+      <p class="test-quote">"You are always such an incredible resource for this unique imagery and I consistently put forward your photos for related projects we have going on here at Patagonia."</p>
+      <div class="test-author">Rich Crowder</div>
+      <div class="test-role">Photography Department, Patagonia Inc</div>
+    </div>
+    <div class="test-card">
+      <p class="test-quote">"My new boss is a HUGE fan of yours. She really is excited and has encouraged me to look into purchasing more photos from you. I REALLY love your salmon shots."</p>
+      <div class="test-author">Sharon Dean</div>
+      <div class="test-role">Sr. Graphic Designer, Seattle Aquarium</div>
+    </div>
+    <div class="test-card">
+      <p class="test-quote">"I just went to your website and my heart is pounding after seeing your absolutely incredible and inspiring new work. I seldom feel the way I do when I look at your images."</p>
+      <div class="test-author">Elizabeth Phillips</div>
+      <div class="test-role">Visual Thinkers Communication Design Inc</div>
+    </div>
   </div>
+</section>
 
-  <p class="form-divider">Prefer email? No problem.</p>
+<section class="cta-section">
+  <div class="section-label">Ready to license?</div>
+  <div class="section-title">Tell us about your project</div>
+  <div class="section-sub">We'll send a curated selection of images tailored to your needs, usually within 24 hours. No commitment required.</div>
+  <div class="cta-actions">
+    <a href="#contact" class="btn-primary">Request Images</a>
+    <a href="https://www.eikojones.com" class="btn-secondary" target="_blank">Browse Portfolio</a>
+  </div>
+</section>
 
-  <form class="contact-form" action="https://formspree.io/f/mjgeegle" method="POST">
-    <div class="form-row">
-      <div class="form-group">
-        <label>Your name</label>
-        <input type="text" name="name" placeholder="Jane Smith" required>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Get in touch</h3>
+      <p>Tell us what you're working on and we'll put together a curated selection. Direct communication, fast turnaround, straightforward licensing.</p>
+      <div class="contact-stat">
+        <strong>Response time</strong>
+        <span>Usually within 24 hours</span>
       </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="jane@organization.com" required>
+      <div class="contact-stat">
+        <strong>Portfolio</strong>
+        <span>www.eikojones.com</span>
+      </div>
+      <div class="contact-stat">
+        <strong>Based in</strong>
+        <span>New Zealand &middot; Shooting worldwide</span>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label>Organization</label>
-        <input type="text" name="organization" placeholder="Seattle Aquarium">
+    <form onsubmit="event.preventDefault();alert('This is a preview — form submission not active.')">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jane@organization.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Organization</label>
+          <input type="text" placeholder="Seattle Aquarium">
+        </div>
+        <div class="form-group">
+          <label>Industry</label>
+          <select>
+            <option value="">Select your sector</option>
+            <option>Environmental organization</option>
+            <option>Fisheries / Marine science</option>
+            <option>Public aquarium / Zoo</option>
+            <option>Magazine / Publisher</option>
+            <option>Government agency</option>
+            <option>Corporate / Brand</option>
+            <option>Other</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label>Industry</label>
-        <select name="industry">
-          <option value="">Select your sector</option>
-          <option>Environmental organization</option>
-          <option>Fisheries / marine science</option>
-          <option>Public aquarium / zoo</option>
-          <option>Magazine / publisher</option>
-          <option>Government agency</option>
-          <option>Corporate / brand</option>
-          <option>Education / academic</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group full">
         <label>What are you looking for?</label>
-        <textarea name="message" placeholder="Example: we need 5-10 high-res salmon images for our annual report and exhibition signage"></textarea>
+        <textarea placeholder="e.g. We need 5-10 high-res salmon images for our annual report and exhibition signage"></textarea>
       </div>
-    </div>
-    <div class="form-submit-row">
-      <span class="note">No commitment. We'll respond within 24 hours.</span>
-      <button class="btn-submit" type="submit">Send request</button>
-    </div>
-  </form>
+      <button type="submit" class="btn-primary" style="width:100%;text-align:center">Send Request</button>
+    </form>
+  </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
-  <p>&copy; 2026 Eiko Jones Photography &middot; <a href="https://www.eikojones.com" target="_blank" rel="noopener">www.eikojones.com</a> &middot; Direct-to-artist stock imagery</p>
+  <div class="foot-left">&copy; 2026 Eiko Jones Photography &middot; Direct-to-artist stock imagery</div>
+  <div class="foot-right">
+    <a href="https://www.eikojones.com" target="_blank">www.eikojones.com</a>
+  </div>
 </footer>
 
 </body>
