@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,795 +20,793 @@
   --whatsapp: #25D366;
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-font-family: ‘DM Sans’, sans-serif;
-background: var(–ocean);
-color: var(–text);
-line-height: 1.6;
-overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ocean);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ======================== HERO ======================== */
 .hero {
-position: relative;
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
 .hero::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background:
-radial-gradient(ellipse at 20% 80%, rgba(0,212,255,0.08) 0%, transparent 60%),
-radial-gradient(ellipse at 80% 20%, rgba(0,180,216,0.06) 0%, transparent 50%),
-linear-gradient(180deg, var(–ocean) 0%, #0a1520 50%, var(–ocean) 100%);
-z-index: 0;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(0,212,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0,180,216,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--ocean) 0%, #0a1520 50%, var(--ocean) 100%);
+  z-index: 0;
 }
 
 .caustics {
-position: absolute;
-inset: 0;
-opacity: 0.025;
-background: repeating-conic-gradient(rgba(0,212,255,0.3) 0%, transparent 5%, transparent 10%);
-background-size: 200px 200px;
-animation: causticMove 25s linear infinite;
-z-index: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background: repeating-conic-gradient(rgba(0,212,255,0.3) 0%, transparent 5%, transparent 10%);
+  background-size: 200px 200px;
+  animation: causticMove 25s linear infinite;
+  z-index: 0;
 }
 
 @keyframes causticMove {
-0% { transform: translate(0, 0) rotate(0deg); }
-100% { transform: translate(-100px, -50px) rotate(360deg); }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-100px, -50px) rotate(360deg); }
 }
 
 .hero-content {
-position: relative;
-z-index: 1;
-max-width: 900px;
-padding: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 2rem;
 }
 
 .hero-badge {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 8px 20px;
-border: 1px solid var(–card-border);
-border-radius: 100px;
-font-size: 0.75rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(–cyan);
-margin-bottom: 2rem;
-background: rgba(0,212,255,0.05);
-animation: fadeUp 1s ease both;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 2rem;
+  background: rgba(0,212,255,0.05);
+  animation: fadeUp 1s ease both;
 }
 
 .hero-badge::before {
-content: ‘’;
-width: 6px;
-height: 6px;
-border-radius: 50%;
-background: var(–cyan);
-animation: pulse 2s ease infinite;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse 2s ease infinite;
 }
 
 @keyframes pulse {
-0%, 100% { opacity: 1; }
-50% { opacity: 0.3; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 .hero h1 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(2.8rem, 6vw, 5.5rem);
-font-weight: 900;
-color: var(–white);
-line-height: 1.05;
-margin-bottom: 1.5rem;
-animation: fadeUp 1s 0.15s ease both;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s 0.15s ease both;
 }
 
 .hero h1 em {
-font-style: italic;
-color: var(–cyan);
+  font-style: italic;
+  color: var(--cyan);
 }
 
 .hero-sub {
-font-size: clamp(1rem, 2vw, 1.25rem);
-color: var(–text-dim);
-max-width: 600px;
-margin: 0 auto 2.5rem;
-font-weight: 300;
-animation: fadeUp 1s 0.3s ease both;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+  animation: fadeUp 1s 0.3s ease both;
 }
 
 .hero-cta-row {
-display: flex;
-gap: 1rem;
-justify-content: center;
-flex-wrap: wrap;
-animation: fadeUp 1s 0.45s ease both;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 1s 0.45s ease both;
 }
 
 .btn-primary {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 14px 32px;
-background: var(–cyan);
-color: var(–ocean);
-font-weight: 700;
-font-size: 0.95rem;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-text-decoration: none;
-transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--cyan);
+  color: var(--ocean);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-background: #33ddff;
-transform: translateY(-2px);
-box-shadow: 0 8px 30px rgba(0,212,255,0.25);
+  background: #33ddff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,212,255,0.25);
 }
 
 .btn-whatsapp {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 14px 32px;
-background: var(–whatsapp);
-color: #fff;
-font-weight: 700;
-font-size: 0.95rem;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-text-decoration: none;
-transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--whatsapp);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-background: #2be06f;
-transform: translateY(-2px);
-box-shadow: 0 8px 30px rgba(37,211,102,0.25);
+  background: #2be06f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.25);
 }
 
 .btn-whatsapp svg {
-width: 18px;
-height: 18px;
-fill: #fff;
+  width: 18px;
+  height: 18px;
+  fill: #fff;
 }
 
 .btn-secondary {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 14px 32px;
-background: transparent;
-color: var(–white);
-font-weight: 500;
-font-size: 0.95rem;
-border: 1px solid rgba(255,255,255,0.2);
-border-radius: 6px;
-cursor: pointer;
-text-decoration: none;
-transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-border-color: var(–cyan);
-color: var(–cyan);
-background: rgba(0,212,255,0.05);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,212,255,0.05);
 }
 
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ======================== TRUST BAR ======================== */
 .trust-bar {
-padding: 3rem 2rem;
-text-align: center;
-border-top: 1px solid rgba(255,255,255,0.04);
-border-bottom: 1px solid rgba(255,255,255,0.04);
-background: rgba(0,0,0,0.2);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.2);
 }
 
 .trust-bar p {
-font-size: 0.7rem;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–text-dim);
-margin-bottom: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
 }
 
 .trust-logos {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 3rem;
-flex-wrap: wrap;
-opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  opacity: 0.5;
 }
 
 .trust-logos span {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.1rem;
-font-weight: 600;
-color: var(–text-dim);
-white-space: nowrap;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  white-space: nowrap;
 }
 
 /* ======================== VALUE PROP ======================== */
 .value-section {
-padding: 6rem 2rem;
-max-width: 1100px;
-margin: 0 auto;
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section-label {
-font-size: 0.7rem;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–cyan);
-margin-bottom: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1rem;
 }
 
 .value-section h2 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(2rem, 4vw, 3rem);
-font-weight: 700;
-color: var(–white);
-margin-bottom: 1.5rem;
-max-width: 700px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  max-width: 700px;
 }
 
 .value-section .lead {
-font-size: 1.1rem;
-color: var(–text-dim);
-max-width: 650px;
-margin-bottom: 3rem;
-font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  max-width: 650px;
+  margin-bottom: 3rem;
+  font-weight: 300;
 }
 
 .value-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .value-card {
-background: var(–card-bg);
-border: 1px solid var(–card-border);
-border-radius: 12px;
-padding: 2rem;
-transition: all 0.4s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.4s ease;
 }
 
 .value-card:hover {
-border-color: rgba(0,212,255,0.3);
-background: rgba(0,212,255,0.04);
-transform: translateY(-4px);
+  border-color: rgba(0,212,255,0.3);
+  background: rgba(0,212,255,0.04);
+  transform: translateY(-4px);
 }
 
 .value-icon {
-width: 48px;
-height: 48px;
-border-radius: 10px;
-background: rgba(0,212,255,0.08);
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(0,212,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
 }
 
 .value-icon svg {
-width: 22px;
-height: 22px;
-stroke: var(–cyan);
-fill: none;
-stroke-width: 1.5;
-stroke-linecap: round;
-stroke-linejoin: round;
+  width: 22px;
+  height: 22px;
+  stroke: var(--cyan);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .value-card h3 {
-font-family: ‘DM Sans’, sans-serif;
-font-size: 1.1rem;
-font-weight: 700;
-color: var(–white);
-margin-bottom: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
 }
 
 .value-card p {
-font-size: 0.9rem;
-color: var(–text-dim);
-line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.6;
 }
 
 /* ======================== INDUSTRIES ======================== */
 .industries {
-padding: 4rem 2rem 6rem;
-max-width: 1100px;
-margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .industries h2 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(2rem, 4vw, 3rem);
-font-weight: 700;
-color: var(–white);
-margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
 }
 
 .industries .lead {
-font-size: 1.05rem;
-color: var(–text-dim);
-max-width: 600px;
-margin-bottom: 3rem;
-font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  font-weight: 300;
 }
 
 .industry-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
 }
 
 .industry-card {
-border: 1px solid var(–card-border);
-border-radius: 12px;
-overflow: hidden;
-background: var(–card-bg);
-transition: all 0.4s ease;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  transition: all 0.4s ease;
 }
 
 .industry-card:hover {
-border-color: rgba(0,212,255,0.35);
-transform: translateY(-4px);
-box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  border-color: rgba(0,212,255,0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
 .industry-card-header {
-padding: 1.5rem 2rem 1rem;
-display: flex;
-align-items: center;
-gap: 1rem;
+  padding: 1.5rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .industry-icon {
-width: 44px;
-height: 44px;
-border-radius: 10px;
-background: rgba(0,212,255,0.08);
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(0,212,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .industry-icon svg {
-width: 20px;
-height: 20px;
-stroke: var(–cyan);
-fill: none;
-stroke-width: 1.5;
-stroke-linecap: round;
-stroke-linejoin: round;
+  width: 20px;
+  height: 20px;
+  stroke: var(--cyan);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .industry-card h3 {
-font-size: 1.05rem;
-font-weight: 700;
-color: var(–white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
 }
 
 .industry-card-body {
-padding: 0 2rem 1.25rem;
+  padding: 0 2rem 1.25rem;
 }
 
 .industry-card-body p {
-font-size: 0.85rem;
-color: var(–text-dim);
-line-height: 1.6;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
 }
 
 .industry-uses {
-padding: 0 2rem 1.5rem;
-display: flex;
-flex-wrap: wrap;
-gap: 6px;
+  padding: 0 2rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .use-tag {
-padding: 4px 12px;
-border-radius: 100px;
-font-size: 0.7rem;
-font-weight: 500;
-background: rgba(0,212,255,0.06);
-border: 1px solid rgba(0,212,255,0.1);
-color: var(–cyan-dim);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: rgba(0,212,255,0.06);
+  border: 1px solid rgba(0,212,255,0.1);
+  color: var(--cyan-dim);
 }
 
 .industry-card-footer {
-padding: 1rem 2rem;
-border-top: 1px solid rgba(255,255,255,0.04);
-display: flex;
-align-items: center;
-gap: 1rem;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .industry-card-footer a {
-font-size: 0.85rem;
-color: var(–cyan);
-text-decoration: none;
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 6px;
-transition: gap 0.3s ease;
+  font-size: 0.85rem;
+  color: var(--cyan);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s ease;
 }
 
 .industry-card:hover .industry-card-footer a {
-gap: 10px;
+  gap: 10px;
 }
 
 .industry-card-footer .wa-link {
-color: var(–whatsapp);
-display: flex;
-align-items: center;
-gap: 5px;
-font-size: 0.85rem;
-font-weight: 600;
-text-decoration: none;
+  color: var(--whatsapp);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .industry-card-footer .wa-link svg {
-width: 14px;
-height: 14px;
-fill: var(–whatsapp);
+  width: 14px;
+  height: 14px;
+  fill: var(--whatsapp);
 }
 
 /* ======================== TESTIMONIALS ======================== */
 .testimonials {
-padding: 6rem 0;
-background: rgba(0,0,0,0.2);
-border-top: 1px solid rgba(255,255,255,0.04);
-border-bottom: 1px solid rgba(255,255,255,0.04);
-overflow: hidden;
+  padding: 6rem 0;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
 }
 
 .testimonials-header {
-max-width: 1100px;
-margin: 0 auto;
-padding: 0 2rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
 }
 
 .testimonials h2 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(2rem, 4vw, 2.8rem);
-font-weight: 700;
-color: var(–white);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
 }
 
 /* Scrolling testimonial track */
 .testimonial-track-wrapper {
-position: relative;
-width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .testimonial-track-wrapper::before,
 .testimonial-track-wrapper::after {
-content: ‘’;
-position: absolute;
-top: 0;
-bottom: 0;
-width: 80px;
-z-index: 2;
-pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .testimonial-track-wrapper::before {
-left: 0;
-background: linear-gradient(to right, rgba(10,18,28,1) 0%, transparent 100%);
+  left: 0;
+  background: linear-gradient(to right, rgba(10,18,28,1) 0%, transparent 100%);
 }
 
 .testimonial-track-wrapper::after {
-right: 0;
-background: linear-gradient(to left, rgba(10,18,28,1) 0%, transparent 100%);
+  right: 0;
+  background: linear-gradient(to left, rgba(10,18,28,1) 0%, transparent 100%);
 }
 
 .testimonial-track {
-display: flex;
-gap: 1.5rem;
-animation: scrollTestimonials 30s linear infinite;
-width: max-content;
-padding: 0.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+  animation: scrollTestimonials 30s linear infinite;
+  width: max-content;
+  padding: 0.5rem 0;
 }
 
 .testimonial-track:hover {
-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes scrollTestimonials {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .testimonial-card {
-background: var(–card-bg);
-border: 1px solid var(–card-border);
-border-radius: 12px;
-padding: 2rem;
-min-width: 380px;
-max-width: 420px;
-flex-shrink: 0;
-transition: border-color 0.3s;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 380px;
+  max-width: 420px;
+  flex-shrink: 0;
+  transition: border-color 0.3s;
 }
 
 .testimonial-card:hover {
-border-color: rgba(0,212,255,0.3);
+  border-color: rgba(0,212,255,0.3);
 }
 
 .testimonial-card .quote {
-font-family: ‘Playfair Display’, serif;
-font-size: 0.95rem;
-font-style: italic;
-color: var(–text);
-line-height: 1.7;
-margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .testimonial-card .quote::before {
-content: ‘\201C’;
-color: var(–cyan);
-font-size: 2rem;
-line-height: 0;
-vertical-align: -0.3em;
-margin-right: 4px;
+  content: '\201C';
+  color: var(--cyan);
+  font-size: 2rem;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 4px;
 }
 
 .testimonial-author {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-author strong {
-color: var(–white);
-font-weight: 600;
-font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .testimonial-author span {
-color: var(–text-dim);
-font-size: 0.8rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
 }
 
 /* ======================== CTA / CONTACT ======================== */
 .cta-section {
-padding: 6rem 2rem;
-max-width: 800px;
-margin: 0 auto;
-text-align: center;
+  padding: 6rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .cta-section h2 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(2rem, 4vw, 3rem);
-font-weight: 700;
-color: var(–white);
-margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
 }
 
 .cta-section .lead {
-font-size: 1.05rem;
-color: var(–text-dim);
-max-width: 550px;
-margin: 0 auto 1.5rem;
-font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+  font-weight: 300;
 }
 
 /* Quick action buttons */
 .quick-actions {
-display: flex;
-gap: 1rem;
-justify-content: center;
-flex-wrap: wrap;
-margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
 }
 
 .quick-actions .btn-whatsapp,
 .quick-actions .btn-sms {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 14px 28px;
-font-weight: 700;
-font-size: 0.95rem;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-text-decoration: none;
-transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .quick-actions .btn-whatsapp {
-background: var(–whatsapp);
-color: #fff;
+  background: var(--whatsapp);
+  color: #fff;
 }
 
 .quick-actions .btn-whatsapp:hover {
-background: #2be06f;
-transform: translateY(-2px);
-box-shadow: 0 8px 30px rgba(37,211,102,0.25);
+  background: #2be06f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.25);
 }
 
 .quick-actions .btn-sms {
-background: rgba(255,255,255,0.08);
-color: var(–white);
-border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .quick-actions .btn-sms:hover {
-background: rgba(255,255,255,0.12);
-transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
 }
 
 .quick-actions .btn-sms svg,
 .quick-actions .btn-whatsapp svg {
-width: 18px;
-height: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .form-divider {
-font-size: 0.8rem;
-color: var(–text-dim);
-margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
 }
 
 .contact-form {
-background: var(–card-bg);
-border: 1px solid var(–card-border);
-border-radius: 16px;
-padding: 2.5rem;
-text-align: left;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: left;
 }
 
 .form-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1rem;
-margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form-group {
-display: flex;
-flex-direction: column;
-gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .form-group.full {
-grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .form-group label {
-font-size: 0.8rem;
-font-weight: 600;
-color: var(–text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-padding: 12px 16px;
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.1);
-border-radius: 8px;
-color: var(–white);
-font-family: ‘DM Sans’, sans-serif;
-font-size: 0.9rem;
-transition: border-color 0.3s;
-outline: none;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+  outline: none;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-border-color: var(–cyan);
+  border-color: var(--cyan);
 }
 
 .form-group select {
-appearance: none;
-background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘12’ viewBox=‘0 0 12 12’%3E%3Cpath fill=’%2300d4ff’ d=‘M6 8L1 3h10z’/%3E%3C/svg%3E”);
-background-repeat: no-repeat;
-background-position: right 14px center;
-padding-right: 36px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300d4ff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
 }
 
 .form-group select option {
-background: var(–ocean);
+  background: var(--ocean);
 }
 
 .form-group textarea {
-resize: vertical;
-min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 .form-submit-row {
-margin-top: 1.5rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-gap: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .form-submit-row .note {
-font-size: 0.78rem;
-color: var(–text-dim);
+  font-size: 0.78rem;
+  color: var(--text-dim);
 }
 
 .btn-submit {
-padding: 14px 40px;
-background: var(–cyan);
-color: var(–ocean);
-font-weight: 700;
-font-size: 0.95rem;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-font-family: ‘DM Sans’, sans-serif;
-transition: all 0.3s ease;
+  padding: 14px 40px;
+  background: var(--cyan);
+  color: var(--ocean);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-background: #33ddff;
-transform: translateY(-2px);
-box-shadow: 0 8px 30px rgba(0,212,255,0.25);
+  background: #33ddff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,212,255,0.25);
 }
 
 /* ======================== FOOTER ======================== */
 footer {
-padding: 3rem 2rem;
-text-align: center;
-border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
 
 footer p {
-font-size: 0.8rem;
-color: var(–text-dim);
+  font-size: 0.8rem;
+  color: var(--text-dim);
 }
 
 footer a {
-color: var(–cyan);
-text-decoration: none;
+  color: var(--cyan);
+  text-decoration: none;
 }
 
 /* ======================== RESPONSIVE ======================== */
 @media (max-width: 700px) {
-.form-row { grid-template-columns: 1fr; }
-.trust-logos { gap: 1.5rem; }
-.industry-grid { grid-template-columns: 1fr; }
-.hero-cta-row { flex-direction: column; align-items: center; }
-.testimonial-card { min-width: 300px; max-width: 340px; }
-.quick-actions { flex-direction: column; align-items: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .trust-logos { gap: 1.5rem; }
+  .industry-grid { grid-template-columns: 1fr; }
+  .hero-cta-row { flex-direction: column; align-items: center; }
+  .testimonial-card { min-width: 300px; max-width: 340px; }
+  .quick-actions { flex-direction: column; align-items: center; }
 }
 </style>
-
 </head>
 <body>
 
 <!-- SVG sprite for icons -->
-
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
   <symbol id="icon-handshake" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0A5.4 5.4 0 0 0 3.58 12L12 20.42 20.42 12a5.4 5.4 0 0 0 0-7.42z"/></symbol>
@@ -828,7 +825,6 @@ text-decoration: none;
 </svg>
 
 <!-- ============ HERO ============ -->
-
 <section class="hero">
   <div class="caustics"></div>
   <div class="hero-content">
@@ -847,7 +843,6 @@ text-decoration: none;
 </section>
 
 <!-- ============ TRUST BAR ============ -->
-
 <div class="trust-bar">
   <p>Trusted by leading organizations worldwide</p>
   <div class="trust-logos">
@@ -861,7 +856,6 @@ text-decoration: none;
 </div>
 
 <!-- ============ VALUE PROPS ============ -->
-
 <section class="value-section">
   <div class="section-label">Why direct-to-artist</div>
   <h2>Skip the stock agencies. Work with the source.</h2>
@@ -901,7 +895,6 @@ text-decoration: none;
 </section>
 
 <!-- ============ INDUSTRIES ============ -->
-
 <section class="industries" id="industries">
   <div class="section-label">Industries we serve</div>
   <h2>Imagery tailored to your sector</h2>
@@ -909,133 +902,130 @@ text-decoration: none;
 
   <div class="industry-grid">
 
-```
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-droplet"/></svg></div>
-    <h3>Environmental organizations</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Salmon, watershed, and ecosystem imagery for conservation campaigns, fundraising materials, and public awareness initiatives.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Social media</span>
-    <span class="use-tag">Publications</span>
-    <span class="use-tag">Outreach</span>
-    <span class="use-tag">Fundraising</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20environmental%20org%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-droplet"/></svg></div>
+        <h3>Environmental organizations</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Salmon, watershed, and ecosystem imagery for conservation campaigns, fundraising materials, and public awareness initiatives.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Social media</span>
+        <span class="use-tag">Publications</span>
+        <span class="use-tag">Outreach</span>
+        <span class="use-tag">Fundraising</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20environmental%20org%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-fish"/></svg></div>
-    <h3>Fisheries and marine science</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Scientific-quality underwater photography of Pacific salmon species, spawning behavior, freshwater habitats, and marine ecosystems.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Scientific papers</span>
-    <span class="use-tag">Textbooks</span>
-    <span class="use-tag">Brochures</span>
-    <span class="use-tag">Web</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20in%20fisheries%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-fish"/></svg></div>
+        <h3>Fisheries and marine science</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Scientific-quality underwater photography of Pacific salmon species, spawning behavior, freshwater habitats, and marine ecosystems.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Scientific papers</span>
+        <span class="use-tag">Textbooks</span>
+        <span class="use-tag">Brochures</span>
+        <span class="use-tag">Web</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20in%20fisheries%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-waves"/></svg></div>
-    <h3>Public aquariums and zoos</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Large-format exhibit signage, visitor guides, advertising, and display graphics featuring vibrant underwater and wildlife imagery.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Exhibit signage</span>
-    <span class="use-tag">Displays</span>
-    <span class="use-tag">Advertising</span>
-    <span class="use-tag">Guides</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20aquarium%20or%20zoo%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-waves"/></svg></div>
+        <h3>Public aquariums and zoos</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Large-format exhibit signage, visitor guides, advertising, and display graphics featuring vibrant underwater and wildlife imagery.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Exhibit signage</span>
+        <span class="use-tag">Displays</span>
+        <span class="use-tag">Advertising</span>
+        <span class="use-tag">Guides</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20an%20aquarium%20or%20zoo%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-book"/></svg></div>
-    <h3>Magazines and publishers</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Editorial-grade nature, wildlife, and landscape photography for articles, covers, books, and marketing materials.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Article images</span>
-    <span class="use-tag">Covers</span>
-    <span class="use-tag">Books</span>
-    <span class="use-tag">Marketing</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20a%20publisher%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-book"/></svg></div>
+        <h3>Magazines and publishers</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Editorial-grade nature, wildlife, and landscape photography for articles, covers, books, and marketing materials.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Article images</span>
+        <span class="use-tag">Covers</span>
+        <span class="use-tag">Books</span>
+        <span class="use-tag">Marketing</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20a%20publisher%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-landmark"/></svg></div>
-    <h3>Government agencies</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Professional imagery for public communications, park signage, departmental publications, educational campaigns, and web presence.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Signage</span>
-    <span class="use-tag">Publications</span>
-    <span class="use-tag">Web</span>
-    <span class="use-tag">Campaigns</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20a%20government%20agency%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-landmark"/></svg></div>
+        <h3>Government agencies</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Professional imagery for public communications, park signage, departmental publications, educational campaigns, and web presence.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Signage</span>
+        <span class="use-tag">Publications</span>
+        <span class="use-tag">Web</span>
+        <span class="use-tag">Campaigns</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20with%20a%20government%20agency%20and%20interested%20in%20licensing%20imagery." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
-<div class="industry-card">
-  <div class="industry-card-header">
-    <div class="industry-icon"><svg><use href="#icon-briefcase"/></svg></div>
-    <h3>Corporate and brands</h3>
-  </div>
-  <div class="industry-card-body">
-    <p>Striking nature imagery for corporate branding, product packaging, trade show banners, wall graphics, and digital campaigns.</p>
-  </div>
-  <div class="industry-uses">
-    <span class="use-tag">Packaging</span>
-    <span class="use-tag">Trade shows</span>
-    <span class="use-tag">Wall graphics</span>
-    <span class="use-tag">Digital</span>
-  </div>
-  <div class="industry-card-footer">
-    <a href="#contact">Request imagery &#8594;</a>
-    <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20imagery%20for%20our%20brand." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
-  </div>
-</div>
-```
+    <div class="industry-card">
+      <div class="industry-card-header">
+        <div class="industry-icon"><svg><use href="#icon-briefcase"/></svg></div>
+        <h3>Corporate and brands</h3>
+      </div>
+      <div class="industry-card-body">
+        <p>Striking nature imagery for corporate branding, product packaging, trade show banners, wall graphics, and digital campaigns.</p>
+      </div>
+      <div class="industry-uses">
+        <span class="use-tag">Packaging</span>
+        <span class="use-tag">Trade shows</span>
+        <span class="use-tag">Wall graphics</span>
+        <span class="use-tag">Digital</span>
+      </div>
+      <div class="industry-card-footer">
+        <a href="#contact">Request imagery &#8594;</a>
+        <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20imagery%20for%20our%20brand." class="wa-link" target="_blank" rel="noopener"><svg><use href="#icon-whatsapp"/></svg> Text</a>
+      </div>
+    </div>
 
   </div>
 </section>
 
 <!-- ============ TESTIMONIALS (scrolling) ============ -->
-
 <section class="testimonials">
   <div class="testimonials-header">
     <div class="section-label">What clients say</div>
@@ -1092,13 +1082,11 @@ text-decoration: none;
 </section>
 
 <!-- ============ CONTACT / CTA ============ -->
-
 <section class="cta-section" id="contact">
   <h2>Ready to license?</h2>
   <p class="lead">Tell us about your project and we'll send you a curated selection of images tailored to your needs, usually within 24 hours.</p>
 
   <!-- Quick action buttons -->
-
   <div class="quick-actions">
     <a href="https://wa.me/6421223626&text=Hi%20Eiko%2C%20I%27m%20interested%20in%20licensing%20some%20of%20your%20imagery." class="btn-whatsapp" target="_blank" rel="noopener">
       <svg><use href="#icon-whatsapp"/></svg>
@@ -1157,7 +1145,6 @@ text-decoration: none;
 </section>
 
 <!-- ============ FOOTER ============ -->
-
 <footer>
   <p>&copy; 2026 Eiko Jones Photography &middot; <a href="https://www.eikojones.com" target="_blank" rel="noopener">www.eikojones.com</a> &middot; Direct-to-artist stock imagery</p>
 </footer>
