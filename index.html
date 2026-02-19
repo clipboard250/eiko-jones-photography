@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eiko Jones — Direct-to-Artist Stock Imagery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #1a2a3a;
+  --ocean: #0e1c2a;
+  --cyan: #00d4ff;
+  --cyan-dim: #00a8cc;
+  --teal: #00b4d8;
+  --white: #f0f4f7;
+  --warm: #e8ddd3;
+  --gold: #d4a574;
+  --text: #c8d6e0;
+  --text-dim: #8a9baa;
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(0,212,255,0.12);
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–ocean);
+color: var(–text);
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+/* ======================== HERO ======================== */
+.hero {
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 20% 80%, rgba(0,212,255,0.08) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 20%, rgba(0,180,216,0.06) 0%, transparent 50%),
+linear-gradient(180deg, var(–ocean) 0%, #0a1520 50%, var(–ocean) 100%);
+z-index: 0;
+}
+
+/* Animated water caustics effect */
+.caustics {
+position: absolute;
+inset: 0;
+opacity: 0.03;
+background: repeating-conic-gradient(
+rgba(0,212,255,0.3) 0%, transparent 5%, transparent 10%
+);
+background-size: 200px 200px;
+animation: causticMove 20s linear infinite;
+z-index: 0;
+}
+
+@keyframes causticMove {
+0% { transform: translate(0, 0) rotate(0deg); }
+100% { transform: translate(-100px, -50px) rotate(360deg); }
+}
+
+.hero-content {
+position: relative;
+z-index: 1;
+max-width: 900px;
+padding: 2rem;
+}
+
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 20px;
+border: 1px solid var(–card-border);
+border-radius: 100px;
+font-size: 0.75rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–cyan);
+margin-bottom: 2rem;
+background: rgba(0,212,255,0.05);
+animation: fadeUp 1s ease both;
+}
+
+.hero-badge::before {
+content: ‘’;
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(–cyan);
+animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.3; }
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.8rem, 6vw, 5.5rem);
+font-weight: 900;
+color: var(–white);
+line-height: 1.05;
+margin-bottom: 1.5rem;
+animation: fadeUp 1s 0.15s ease both;
+}
+
+.hero h1 em {
+font-style: italic;
+color: var(–cyan);
+}
+
+.hero-sub {
+font-size: clamp(1rem, 2vw, 1.25rem);
+color: var(–text-dim);
+max-width: 600px;
+margin: 0 auto 2.5rem;
+font-weight: 300;
+animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-cta-row {
+display: flex;
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+animation: fadeUp 1s 0.45s ease both;
+}
+
+.btn-primary {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 14px 32px;
+background: var(–cyan);
+color: var(–ocean);
+font-weight: 700;
+font-size: 0.95rem;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.3s ease;
+letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+background: #33ddff;
+transform: translateY(-2px);
+box-shadow: 0 8px 30px rgba(0,212,255,0.25);
+}
+
+.btn-secondary {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 14px 32px;
+background: transparent;
+color: var(–white);
+font-weight: 500;
+font-size: 0.95rem;
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 6px;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+border-color: var(–cyan);
+color: var(–cyan);
+background: rgba(0,212,255,0.05);
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================== TRUST BAR ======================== */
+.trust-bar {
+padding: 3rem 2rem;
+text-align: center;
+border-top: 1px solid rgba(255,255,255,0.04);
+border-bottom: 1px solid rgba(255,255,255,0.04);
+background: rgba(0,0,0,0.2);
+}
+
+.trust-bar p {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–text-dim);
+margin-bottom: 1.5rem;
+}
+
+.trust-logos {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 3rem;
+flex-wrap: wrap;
+opacity: 0.5;
+}
+
+.trust-logos span {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+font-weight: 600;
+color: var(–text-dim);
+white-space: nowrap;
+}
+
+/* ======================== VALUE PROP ======================== */
+.value-section {
+padding: 6rem 2rem;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.value-section .section-label {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–cyan);
+margin-bottom: 1rem;
+}
+
+.value-section h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 700;
+color: var(–white);
+margin-bottom: 1.5rem;
+max-width: 700px;
+}
+
+.value-section .lead {
+font-size: 1.1rem;
+color: var(–text-dim);
+max-width: 650px;
+margin-bottom: 3rem;
+font-weight: 300;
+}
+
+.value-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+}
+
+.value-card {
+background: var(–card-bg);
+border: 1px solid var(–card-border);
+border-radius: 12px;
+padding: 2rem;
+transition: all 0.4s ease;
+}
+
+.value-card:hover {
+border-color: rgba(0,212,255,0.3);
+background: rgba(0,212,255,0.04);
+transform: translateY(-4px);
+}
+
+.value-card .icon {
+width: 48px;
+height: 48px;
+border-radius: 10px;
+background: rgba(0,212,255,0.08);
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 1.25rem;
+font-size: 1.3rem;
+}
+
+.value-card h3 {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 1.1rem;
+font-weight: 700;
+color: var(–white);
+margin-bottom: 0.75rem;
+}
+
+.value-card p {
+font-size: 0.9rem;
+color: var(–text-dim);
+line-height: 1.6;
+}
+
+/* ======================== INDUSTRY SECTIONS ======================== */
+.industries {
+padding: 4rem 2rem 6rem;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.industries .section-label {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–cyan);
+margin-bottom: 1rem;
+}
+
+.industries h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 700;
+color: var(–white);
+margin-bottom: 1rem;
+}
+
+.industries .lead {
+font-size: 1.05rem;
+color: var(–text-dim);
+max-width: 600px;
+margin-bottom: 3rem;
+font-weight: 300;
+}
+
+.industry-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 1.25rem;
+}
+
+.industry-card {
+position: relative;
+border: 1px solid var(–card-border);
+border-radius: 12px;
+overflow: hidden;
+background: var(–card-bg);
+transition: all 0.4s ease;
+cursor: pointer;
+}
+
+.industry-card:hover {
+border-color: rgba(0,212,255,0.35);
+transform: translateY(-4px);
+box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.industry-card-header {
+padding: 1.5rem 2rem 1rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.industry-icon {
+width: 44px;
+height: 44px;
+border-radius: 10px;
+background: rgba(0,212,255,0.08);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+flex-shrink: 0;
+}
+
+.industry-card h3 {
+font-size: 1.05rem;
+font-weight: 700;
+color: var(–white);
+}
+
+.industry-card-body {
+padding: 0 2rem 1.25rem;
+}
+
+.industry-card-body p {
+font-size: 0.85rem;
+color: var(–text-dim);
+line-height: 1.6;
+}
+
+.industry-uses {
+padding: 0 2rem 1.5rem;
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+}
+
+.use-tag {
+padding: 4px 12px;
+border-radius: 100px;
+font-size: 0.7rem;
+font-weight: 500;
+background: rgba(0,212,255,0.06);
+border: 1px solid rgba(0,212,255,0.1);
+color: var(–cyan-dim);
+}
+
+.industry-card-footer {
+padding: 1rem 2rem;
+border-top: 1px solid rgba(255,255,255,0.04);
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.industry-card-footer a {
+font-size: 0.85rem;
+color: var(–cyan);
+text-decoration: none;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: gap 0.3s ease;
+}
+
+.industry-card:hover .industry-card-footer a {
+gap: 10px;
+}
+
+/* ======================== TESTIMONIALS ======================== */
+.testimonials {
+padding: 6rem 2rem;
+background: rgba(0,0,0,0.2);
+border-top: 1px solid rgba(255,255,255,0.04);
+border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.testimonials-inner {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.testimonials .section-label {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–cyan);
+margin-bottom: 1rem;
+}
+
+.testimonials h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 2.8rem);
+font-weight: 700;
+color: var(–white);
+margin-bottom: 3rem;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 1.5rem;
+}
+
+.testimonial-card {
+background: var(–card-bg);
+border: 1px solid var(–card-border);
+border-radius: 12px;
+padding: 2rem;
+}
+
+.testimonial-card .quote {
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-style: italic;
+color: var(–text);
+line-height: 1.7;
+margin-bottom: 1.5rem;
+}
+
+.testimonial-card .quote::before {
+content: ‘”’;
+color: var(–cyan);
+font-size: 2rem;
+line-height: 0;
+vertical-align: -0.3em;
+margin-right: 4px;
+}
+
+.testimonial-author {
+display: flex;
+flex-direction: column;
+}
+
+.testimonial-author strong {
+color: var(–white);
+font-weight: 600;
+font-size: 0.9rem;
+}
+
+.testimonial-author span {
+color: var(–text-dim);
+font-size: 0.8rem;
+}
+
+/* ======================== CONTACT / CTA ======================== */
+.cta-section {
+padding: 6rem 2rem;
+max-width: 800px;
+margin: 0 auto;
+text-align: center;
+}
+
+.cta-section h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 700;
+color: var(–white);
+margin-bottom: 1rem;
+}
+
+.cta-section .lead {
+font-size: 1.05rem;
+color: var(–text-dim);
+max-width: 550px;
+margin: 0 auto 2.5rem;
+font-weight: 300;
+}
+
+.contact-form {
+background: var(–card-bg);
+border: 1px solid var(–card-border);
+border-radius: 16px;
+padding: 2.5rem;
+text-align: left;
+}
+
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+margin-bottom: 1rem;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.form-group.full {
+grid-column: 1 / -1;
+}
+
+.form-group label {
+font-size: 0.8rem;
+font-weight: 600;
+color: var(–text);
+letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+padding: 12px 16px;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 8px;
+color: var(–white);
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.9rem;
+transition: border-color 0.3s;
+outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: var(–cyan);
+}
+
+.form-group select {
+appearance: none;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘12’ viewBox=‘0 0 12 12’%3E%3Cpath fill=’%2300d4ff’ d=‘M6 8L1 3h10z’/%3E%3C/svg%3E”);
+background-repeat: no-repeat;
+background-position: right 14px center;
+padding-right: 36px;
+}
+
+.form-group select option {
+background: var(–ocean);
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 100px;
+}
+
+.form-submit-row {
+margin-top: 1.5rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+.form-submit-row .note {
+font-size: 0.78rem;
+color: var(–text-dim);
+}
+
+.btn-submit {
+padding: 14px 40px;
+background: var(–cyan);
+color: var(–ocean);
+font-weight: 700;
+font-size: 0.95rem;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-family: ‘DM Sans’, sans-serif;
+transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+background: #33ddff;
+transform: translateY(-2px);
+box-shadow: 0 8px 30px rgba(0,212,255,0.25);
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+padding: 3rem 2rem;
+text-align: center;
+border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+footer p {
+font-size: 0.8rem;
+color: var(–text-dim);
+}
+
+footer a {
+color: var(–cyan);
+text-decoration: none;
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 700px) {
+.form-row {
+grid-template-columns: 1fr;
+}
+.trust-logos {
+gap: 1.5rem;
+}
+.industry-grid {
+grid-template-columns: 1fr;
+}
+.hero-cta-row {
+flex-direction: column;
+align-items: center;
+}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+
+<section class="hero">
+  <div class="caustics"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Direct-to-Artist Imagery</div>
+    <h1>Stunning Nature &amp; Wildlife Photography,<br><em>Straight from the Field</em></h1>
+    <p class="hero-sub">Award-winning underwater, salmon, and landscape imagery — licensed directly from photographer Eiko Jones. Featured by National Geographic, Patagonia, and WWF.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">License Images →</a>
+      <a href="#industries" class="btn-secondary">Browse by Industry</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+
+<div class="trust-bar">
+  <p>Trusted by leading organizations worldwide</p>
+  <div class="trust-logos">
+    <span>National Geographic</span>
+    <span>Patagonia</span>
+    <span>WWF Canada</span>
+    <span>Seattle Aquarium</span>
+    <span>Microsoft</span>
+    <span>Fisheries &amp; Oceans Canada</span>
+  </div>
+</div>
+
+<!-- ============ VALUE PROPS ============ -->
+
+<section class="value-section">
+  <div class="section-label">Why Direct-to-Artist</div>
+  <h2>Skip the stock agencies. Work with the source.</h2>
+  <p class="lead">When you license directly from Eiko, you get exclusive access to fresh, current imagery — not recycled stock photos everyone else is using.</p>
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="icon">📷</div>
+      <h3>Exclusive, Fresh Imagery</h3>
+      <p>Continuously updated library from active expeditions in New Zealand, Canada, and worldwide. Get images nobody else has.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🤝</div>
+      <h3>Work Directly with the Artist</h3>
+      <p>Custom requests, specific species, particular angles — communicate directly with Eiko to get exactly what your project needs.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">⚡</div>
+      <h3>Simple, Fast Licensing</h3>
+      <p>No agency middlemen, no complicated rights management. Straightforward licensing for print, digital, exhibitions, and more.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🏆</div>
+      <h3>Award-Winning Quality</h3>
+      <p>Recognized by the world's top publications. Images that elevate your brand, publication, or exhibit beyond generic stock.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🌊</div>
+      <h3>Unmatched Underwater Library</h3>
+      <p>One of the most comprehensive collections of Pacific salmon, freshwater ecosystems, and underwater landscape imagery available anywhere.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon">🌍</div>
+      <h3>Versatile Applications</h3>
+      <p>Proven across signage, brochures, magazines, textbooks, websites, social media, exhibition displays, product packaging, and more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+
+<section class="industries" id="industries">
+  <div class="section-label">Industries We Serve</div>
+  <h2>Imagery tailored to your sector</h2>
+  <p class="lead">Select your industry to see how Eiko's imagery has been used by organizations like yours.</p>
+
+  <div class="industry-grid">
+
+```
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">🐟</div>
+    <h3>Environmental Organizations</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Salmon, watershed, and ecosystem imagery for conservation campaigns, fundraising materials, and public awareness initiatives.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Social media</span>
+    <span class="use-tag">Publications</span>
+    <span class="use-tag">Outreach</span>
+    <span class="use-tag">Fundraising</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">🎣</div>
+    <h3>Fisheries &amp; Marine Science</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Scientific-quality underwater photography of Pacific salmon species, spawning behavior, freshwater habitats, and marine ecosystems.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Scientific papers</span>
+    <span class="use-tag">Textbooks</span>
+    <span class="use-tag">Brochures</span>
+    <span class="use-tag">Web</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">🐠</div>
+    <h3>Public Aquariums &amp; Zoos</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Large-format exhibit signage, visitor guides, advertising, and display graphics featuring vibrant underwater and wildlife imagery.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Exhibit signage</span>
+    <span class="use-tag">Displays</span>
+    <span class="use-tag">Advertising</span>
+    <span class="use-tag">Guides</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">📰</div>
+    <h3>Magazines &amp; Publishers</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Editorial-grade nature, wildlife, and landscape photography for articles, covers, books, and marketing materials.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Article images</span>
+    <span class="use-tag">Covers</span>
+    <span class="use-tag">Books</span>
+    <span class="use-tag">Marketing</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">🏛️</div>
+    <h3>Government Agencies</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Professional imagery for public communications, park signage, departmental publications, educational campaigns, and web presence.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Signage</span>
+    <span class="use-tag">Publications</span>
+    <span class="use-tag">Web</span>
+    <span class="use-tag">Campaigns</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+
+<div class="industry-card">
+  <div class="industry-card-header">
+    <div class="industry-icon">🏢</div>
+    <h3>Corporate &amp; Brands</h3>
+  </div>
+  <div class="industry-card-body">
+    <p>Striking nature imagery for corporate branding, product packaging, trade show banners, wall graphics, and digital campaigns.</p>
+  </div>
+  <div class="industry-uses">
+    <span class="use-tag">Packaging</span>
+    <span class="use-tag">Trade shows</span>
+    <span class="use-tag">Wall graphics</span>
+    <span class="use-tag">Digital</span>
+  </div>
+  <div class="industry-card-footer">
+    <a href="#contact">Request imagery →</a>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Clients Say</div>
+    <h2>Trusted by the best in conservation &amp; media</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="quote">You are always such an incredible resource for this unique imagery and I consistently put forward your photos for related projects we have going on here at Patagonia.</p>
+        <div class="testimonial-author">
+          <strong>Rich Crowder</strong>
+          <span>Photography Department — Patagonia Inc</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">My new boss is a HUGE fan of yours. She really is excited and has encouraged me to look into purchasing more photos from you. I REALLY love your salmon shots.</p>
+        <div class="testimonial-author">
+          <strong>Sharon Dean</strong>
+          <span>Sr. Graphic Designer — Seattle Aquarium</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">I just went to your website and my heart is pounding after seeing your absolutely incredible and inspiring new work. I seldom feel the way I do when I look at your images.</p>
+        <div class="testimonial-author">
+          <strong>Elizabeth Phillips</strong>
+          <span>Visual Thinkers Communication Design Inc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+
+<section class="cta-section" id="contact">
+  <h2>Ready to license?</h2>
+  <p class="lead">Tell us about your project and we'll send you a curated selection of images tailored to your needs — usually within 24 hours.</p>
+
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="jane@organization.com">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Organization</label>
+        <input type="text" placeholder="Seattle Aquarium">
+      </div>
+      <div class="form-group">
+        <label>Industry</label>
+        <select>
+          <option value="">Select your sector…</option>
+          <option>Environmental Organization</option>
+          <option>Fisheries / Marine Science</option>
+          <option>Public Aquarium / Zoo</option>
+          <option>Magazine / Publisher</option>
+          <option>Government Agency</option>
+          <option>Corporate / Brand</option>
+          <option>Education / Academic</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group full">
+        <label>What are you looking for?</label>
+        <textarea placeholder="E.g., We need 5-10 high-res salmon images for our annual report and exhibition signage…"></textarea>
+      </div>
+    </div>
+    <div class="form-submit-row">
+      <span class="note">No commitment. We'll respond within 24 hours.</span>
+      <button class="btn-submit" type="button">Send Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+<footer>
+  <p>© 2026 Eiko Jones Photography · <a href="https://www.eikojones.com" target="_blank">www.eikojones.com</a> · Direct-to-Artist Stock Imagery</p>
+</footer>
+
+</body>
+</html>
